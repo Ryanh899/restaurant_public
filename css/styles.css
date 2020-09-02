@@ -1,0 +1,33 @@
+.nav-fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: grey;
+}
+
+#home {
+    padding: 1.5rem;
+    width: 100%;
+}
+
+#page-container {
+    width: 100%;
+    margin: 0px;
+}
+
+#inventory-form-category {
+    width: 100%;
+}
+
+#inventory-form-vendor {
+    width: 100%;
+}
+
+#inventory-form-current-inventory {
+    display: inline;
+}
+
+.card {
+    text-align: center;
+}
+
