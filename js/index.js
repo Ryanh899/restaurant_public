@@ -7,17 +7,8 @@ $(document).ready(() => {
         $(this).tab('show')
     })
 
-    // counter logic 
-    $('.count').prop('disabled', true);
-    $(document).on('click', '.plus', function () {
-        $('.count').val(parseInt($('.count').val()) + 1);
-    });
-    $(document).on('click', '.minus', function () {
-        $('.count').val(parseInt($('.count').val()) - 1);
-        if ($('.count').val() == -1) {
-            $('.count').val(0);
-        }
-    });
+    // vendor dropdown 
+    $('.dropdown-toggle.vendor-dropdown').dropdown()
 
     //inventory modal 
     $('body').on('click', '#add-inventory', () => {

@@ -25,7 +25,7 @@
                     </div>
                     <div class="modal-body">
                         <form style="text-align: left;" >
-                            <div class="form-group">
+                            <div id="inventory-form" class="form-group">
                                 <label for="inventory-form-name">Name</label>
                                 <input type="text" class="form-control" id="inventory-form-name"
                                     aria-describedby="name">
@@ -45,10 +45,8 @@
                             </div>
                             <div class="form-group">
                                 <p style="display: inline;" >Current Inventory: </p>
-                                <div id="inventory-form-current-inventory" class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
+                                <div id="inventory-form-current-inventory" >
+                                    <input style="display: inline;" type="number" class="form-control count-current-inventory" name="qty" value="1">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -129,36 +127,32 @@
                             </div>
                             <div class="form-group">
                                 <p style="display: inline;" >High Par: </p>
-                                <div id="inventory-form-current-inventory" class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
+                                <div id="inventory-form-high-par" class="qty">
+                                    <input style="display: inline;" type="number" class="form-control count-high-par" name="qty" value="1">
                                 </div>
                                 <p style="display: inline;" >Low Par: </p>
-                                <div id="inventory-form-current-inventory" class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
+                                <div id="inventory-form-low-par" class="qty">
+                                    <input style="display: inline;" type="number" class="form-control count-low-par" name="qty" value="1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div style="width: 100%;" class="fluid dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="inventory-form-vendor"
+                                    <button class="btn btn-secondary dropdown-toggle vendor-dropdown" type="button" id="inventory-form-vendor"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Vendor
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="inventory-form-vendor">
-                                        <button class="dropdown-item" type="button">Karl Strauss</button>
-                                        <button class="dropdown-item" type="button">Wine Warehouse</button>
-                                        <button class="dropdown-item" type="button">Honig</button>
+                                        <button class="dropdown-item" id="karl-strauss" type="button">Karl Strauss</button>
+                                        <button class="dropdown-item" id="wine-warehouse" type="button">Wine Warehouse</button>
+                                        <button class="dropdown-item" id="honig" type="button">Honig</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inventory-form-cost">Cost</label>
-                                <input type="number" id="inventory-form-cost" >
+                                <input type="number" id="inventory-form-cost" class="form-control" >
                                 <label for="inventory-form-discount">Discounted Cost</label>
-                                <input type="number" id="inventory-form-discount">
+                                <input type="number" id="inventory-form-discount " class="form-control">
                             </div>
 
 
@@ -242,11 +236,11 @@
                     <ul class="nav justify-content-start">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                aria-haspopup="true" aria-expanded="false">Beer</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Beer</a>
-                                <a class="dropdown-item" href="#">Wine</a>
-                                <a class="dropdown-item" href="#">Paper Goods</a>
+                                <a class="dropdown-item" id='beer' href="#">Beer</a>
+                                <a class="dropdown-item" id='wine' href="#">Wine</a>
+                                <a class="dropdown-item" id='paper-goods' href="#">Paper Goods</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -262,216 +256,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-12">
+                <div id="inventory-column" class="col-md-12">
 
-                    <div class="card-group">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-group">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-group">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boat Shoes</h5>
-                                <p class="card-text">Current Inventory:</p>
-                                <div class="qty">
-                                    <span class="minus bg-dark">-</span>
-                                    <input type="number" class="count" name="qty" value="1">
-                                    <span class="plus bg-dark">+</span>
-                                </div>
-                                <p class="card-text">Order On: Friday, 9/4</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-
+                        
                 </div>
-
-
-            </div>
-            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-            <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+            <!-- <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
+            <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div> -->
         </div>
         <div class="nav-fixed-bottom">
             <!-- Nav tabs -->
@@ -484,14 +274,14 @@
                     <a class="nav-link" id="inventory-tab" data-toggle="tab" href="#inventory" role="tab"
                         aria-controls="inventory" aria-selected="false">Inventory</a>
                 </li>
-                <li class="nav-item" role="presentation">
+                <!-- <li class="nav-item" role="presentation">
                     <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab"
                         aria-controls="messages" aria-selected="false">Messages</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab"
                         aria-controls="settings" aria-selected="false">Settings</a>
-                </li>
+                </li> -->
             </ul>
         </div>
 
@@ -505,6 +295,8 @@
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
     </script>
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.20.0/dist/axios.min.js"></script>
+    <script src="./js/inventory.js" ></script>
     <script src="./js/index.js"></script>
 </body>
 
